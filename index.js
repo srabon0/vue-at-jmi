@@ -12,6 +12,9 @@ new Vue({
     computed:{
         shapCreate : function(){
             return jdenticon.toSvg(this.textIcon, 200);
+        },
+        reversedText: function(){
+            return this.textIcon.split('').reverse().join('')
         }
     },
     template:`
@@ -21,6 +24,9 @@ new Vue({
             <input v-on:input="inputChange" v-model="textIcon">
             <div>
                 <span v-html="shapCreate"></span>
+            </div>
+            <div>
+            <p> Reversed Text : {{ reversedText }} </p>
             </div>
         </div>
     `
